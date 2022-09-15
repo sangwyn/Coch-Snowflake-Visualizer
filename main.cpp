@@ -17,7 +17,8 @@ int main() {
         right({1400, 800}, right_selected, right_unselected);
 
     int i = 0;
-    Fractal fractal(center);
+    float height = sqrt(pow(kLineLength, 2) - pow(kLineLength / 2, 2));
+    Fractal fractal({center.x, center.y + kLineLength / 3});
     std::vector<Fractal> iterations;
     iterations.push_back(fractal);
     std::cout << i << '\n';

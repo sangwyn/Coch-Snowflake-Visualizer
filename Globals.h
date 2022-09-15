@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-const float kLineLength = 700;
+const float kLineLength = 650;
 
 const sf::Color kBackgroundColor = sf::Color(57, 57, 57);
 const sf::Color kUIColor = sf::Color::White;
