@@ -1,0 +1,3 @@
+/home/oleg/coding/praks/snezhinka_cocka/cmake-build-debug/CMakeFiles/snezhinka_cocka.dir
+/home/oleg/coding/praks/snezhinka_cocka/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/oleg/coding/praks/snezhinka_cocka/cmake-build-debug/CMakeFiles/rebuild_cache.dir
