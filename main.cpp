@@ -16,12 +16,17 @@ int main() {
     Button left({1250, 800}, left_selected, left_unselected),
         right({1400, 800}, right_selected, right_unselected);
 
+    sf::Text text;
+    sf::Font font;
+    font.loadFromFile("Assets/JetBrainsMono-Regular.ttf");
+    text.setFont(font);
+
     int i = 0;
     float height = sqrt(pow(kLineLength, 2) - pow(kLineLength / 2, 2));
     Fractal fractal({center.x, center.y + kLineLength / 3});
     std::vector<Fractal> iterations;
     iterations.push_back(fractal);
-    std::cout << i << '\n';
+//    std::cout << i << '\n';
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -31,13 +36,13 @@ int main() {
                 if (left.Selected()) {
                     if (i > 0) {
                         --i;
-                        std::cout << i << '\n';
+//                        std::cout << i << '\n';
                     }
                 } else if (right.Selected() && i < 10) {
                     if (i == iterations.size() - 1)
                         iterations.push_back(iterations[i].Iterate());
                     ++i;
-                    std::cout << i << '\n';
+//                    std::cout << i << '\n';
                 }
             }
         }
@@ -46,6 +51,9 @@ int main() {
         right.SetSelection(right.MouseOver((sf::Vector2f) sf::Mouse::getPosition(window)));
 
         window.clear(kBackgroundColor);
+
+        text.setString("Iterations passed: " + std::to_string(i) + " (max = 10)");
+        window.draw(text);
 
         left.Draw(window);
         right.Draw(window);
